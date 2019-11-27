@@ -1,6 +1,6 @@
 ---
 title: PC端模板组件
-subtitle: mentor pc template
+subtitle: cook pc template
 cols: 2
 ---
 

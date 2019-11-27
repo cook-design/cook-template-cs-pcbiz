@@ -1,52 +1,56 @@
 {
   "name": "cook-cs-pcbiz",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "辰森PC业务组件模板",
   "author": "yongbao.fyb",
-  "homepage": "",
   "files": [
     "document",
     "src",
-    ".babelrc",
+    "lib",
+    "es",
+    "_gitignore",
     ".gitignore",
-    ".eslintrc",
+    ".babelrc",
     ".eslintignore",
-    ".stylelintrc",
+    ".eslintrc",
     ".stylelintignore",
-    "__.gitignore",
-    "index.d.ts"
+    ".stylelintrc",
+    "abc.json",
+    "app.config.ts",
+    "package.json",
+    "README.md",
+    "tsconfig.json"
   ],
-  "mentorConfig": {
-    "solution": "cs-pcbiz",
-    "id": "",
-    "platform": "",
-    "tag": "",
-    "type": ""
-  },
   "license": "MIT",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "module": "es/index.js",
+  "dependencies": {
+    "tslib": "1"
+  },
   "devDependencies": {
+    "@types/classnames": "2",
+    "@types/react": "16",
+    "@types/react-dom": "16",
     "antd": "3",
-    "babel-cli": "6",
-    "babel-plugin-add-module-exports": "0",
-    "babel-plugin-import": "1",
-    "babel-preset-env": "1",
-    "babel-preset-react": "6",
-    "babel-preset-stage-0": "6",
     "classnames": "2",
+    "copyfiles": "2",
     "cross-env": "5",
-    "eslint": "4",
-    "eslint-config-cook": "1",
     "lesshint": "2",
     "pre-commit": "1",
     "prop-types": "15",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "16",
+    "react-dom": "16",
     "rimraf": "2",
     "stylelint": "7",
-    "stylelint-config-standard": "16"
+    "stylelint-config-standard": "16",
+    "@typescript-eslint/eslint-plugin": "1",
+    "@typescript-eslint/parser": "1",
+    "eslint": "5",
+    "eslint-config-ali": "7",
+    "eslint-plugin-import": "2",
+    "eslint-plugin-react": "7",
+    "eslint-plugin-react-hooks": "1",
+    "typescript": "3"
   },
   "peerDependencies": {
     "classnames": ">=2.0.0",
@@ -56,14 +60,9 @@
     "antd": ">=3.0.0"
   },
   "scripts": {
-    "lint": "npm run srclint && npm run demolint && npm run stylelint",
-    "srclint": "eslint site src scripts --ext '.js,.jsx'",
-    "demolint": "cross-env RUN_ENV=DEMO eslint document/**/*.md --ext '.md'",
-    "stylelint": "stylelint src/**/*.less --syntax less",
-    "copydts": "cp index.d.ts lib/",
-    "compile": "rimraf ./lib & rimraf ./es && npm run compile:js && npm run compile:es",
-    "compile:js": "cross-env BABEL_ENV=common babel src --out-dir ./lib --copy-files",
-    "compile:es": "cross-env BABEL_ENV=es babel src --out-dir ./es --copy-files"
+    "lint": "npm run tslint && npm run stylelint",
+    "tslint": "eslint ./src --ext '.ts,.tsx,.js,.jsx' --fix",
+    "stylelint": "stylelint src/**/*.less --syntax less --fix"
   },
   "pre-commit": [
     "lint"
