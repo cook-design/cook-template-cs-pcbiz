@@ -1,6 +1,6 @@
 {
   "name": "cook-cs-pcbiz",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "辰森PC业务组件模板",
   "author": "yongbao.fyb",
   "files": [
@@ -61,8 +61,8 @@
   },
   "scripts": {
     "lint": "npm run tslint && npm run stylelint",
-    "tslint": "eslint ./src --ext '.ts,.tsx,.js,.jsx' --fix",
-    "stylelint": "stylelint src/**/*.less --syntax less --fix"
+    "tslint": "eslint --ext '.ts,.tsx,.js,.jsx' --fix",
+    "stylelint": "stylelint \"./src/**/*.less\" --syntax less --fix"
   },
   "pre-commit": [
     "lint"
